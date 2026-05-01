@@ -18,12 +18,22 @@ const projects = [
     github: "https://github.com/abdulsamadmsd/zk-ecommerce-store",
   },
   {
-    title: "Professional Developer Portfolio",
+    title: "Personal Developer Portfolio",
     image: "/public/projects/portfolio.png",
     summary:
-      "A high-performance personal portfolio with modern UI, animations, and optimized SEO.",
-    bullets: ["SSR for SEO", "Modular architecture", "Dark mode + animations"],
-    stack: ["React", "Tailwind CSS", "Framer Motion"],
+      "A personal portfolio built with React and TypeScript, featuring smooth animations, dark mode, and a clean modular component structure.",
+    bullets: [
+      "Built with React + TypeScript for type-safe, maintainable code",
+      "Animated UI using Framer Motion with dark mode support",
+      "Modular architecture using shadcn/ui and Tailwind CSS",
+    ],
+    stack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "shadcn/ui",
+    ],
     liveUrl: "https://abdulsamadmsd.vercel.app/",
     github: "https://github.com/abdulsamadmsd/abdulsamad-portfolio",
   },
