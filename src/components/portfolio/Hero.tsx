@@ -86,7 +86,8 @@ const Hero = () => {
             I craft modern, scalable, and user-friendly web experiences with{" "}
             <span className="text-foreground font-medium">React</span>,{" "}
             <span className="text-foreground font-medium">Next.js</span> &{" "}
-            <span className="text-foreground font-medium">TypeScript</span> — turning ideas into clean, performant interfaces.
+            <span className="text-foreground font-medium">TypeScript</span> —
+            turning ideas into clean, performant interfaces.
           </motion.p>
 
           <motion.div
@@ -119,9 +120,21 @@ const Hero = () => {
             className="mt-10 flex items-center gap-4"
           >
             {[
-              { Icon: Github, href: "https://github.com/abdulsamadmsd", label: "GitHub" },
-              { Icon: Linkedin, href: "https://linkedin.com/in/abdulsamadmsd5", label: "LinkedIn" },
-              { Icon: Mail, href: "mailto:abdulsamadpak111@gmail.com", label: "Email" },
+              {
+                Icon: Github,
+                href: "https://github.com/abdulsamadmsd",
+                label: "GitHub",
+              },
+              {
+                Icon: Linkedin,
+                href: "https://linkedin.com/in/abdulsamadmsd5",
+                label: "LinkedIn",
+              },
+              {
+                Icon: Mail,
+                href: "mailto:abdulsamadpak111@gmail.com",
+                label: "Email",
+              },
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}
@@ -166,14 +179,22 @@ const Hero = () => {
 
             {/* floating badges */}
             {[
-              { label: "React", top: "8%", left: "-8%", delay: 0 },
-              { label: "Next.js", top: "20%", right: "-10%", delay: 0.5 },
-              { label: "TS", bottom: "20%", left: "-10%", delay: 1 },
-              { label: "Tailwind", bottom: "8%", right: "-8%", delay: 1.5 },
+              { label: "Next.js", top: "5%", left: "-12%", delay: 0 },
+              { label: "Reactjs", top: "18%", right: "-14%", delay: 0.4 },
+              { label: "TypeScript", top: "50%", left: "-16%", delay: 0.8 },
+              { label: "Zustand", top: "50%", right: "-14%", delay: 1.2 },
+              { label: "TailwindCss", bottom: "15%", left: "-12%", delay: 1.6 },
+              { label: "Git", bottom: "5%", right: "-12%", delay: 2.0 },
             ].map((b: any) => (
               <div
                 key={b.label}
-                style={{ top: b.top, left: b.left, right: b.right, bottom: b.bottom, animationDelay: `${b.delay}s` }}
+                style={{
+                  top: b.top,
+                  left: b.left,
+                  right: b.right,
+                  bottom: b.bottom,
+                  animationDelay: `${b.delay}s`,
+                }}
                 className="absolute glass rounded-full px-3.5 py-1.5 font-mono text-xs text-foreground shadow-card animate-float-slow"
               >
                 <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-accent" />
