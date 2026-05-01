@@ -4,7 +4,7 @@ import { ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     title: "ZK E-Commerce Store",
-    image: "/public/projects/zkHero.png",
+    image: "/projects/zkHero.png",
     summary:
       "A modern, production-ready e-commerce storefront featuring a curated product catalog, intuitive category browsing, and a seamless cart-to-checkout experience.",
     bullets: [
@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: "Personal Developer Portfolio",
-    image: "/public/projects/portfolio.png",
+    image: "/projects/portfolio.png",
     summary:
       "A personal portfolio built with React and TypeScript, featuring smooth animations, dark mode, and a clean modular component structure.",
     bullets: [
