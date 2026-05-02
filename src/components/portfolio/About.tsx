@@ -123,7 +123,7 @@ const About = () => {
                 </p>
 
                 <p className="font-mono text-xs text-muted-foreground/70 mt-1">
-                  Sep 2024 – Present
+                  Sep 2025 – Present
                 </p>
               </motion.div>
             </div>
