@@ -12,7 +12,7 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
-const CV_URL = "/abdul-samad-cv.pdf";
+const CV_URL = "/Abdul_Samad_Next_CV.pdf";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

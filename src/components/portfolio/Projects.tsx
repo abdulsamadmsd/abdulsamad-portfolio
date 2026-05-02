@@ -4,7 +4,7 @@ import { ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     title: "ZK E-Commerce Store",
-    image: "/projects/zkHero.png",
+    image: "/projects/zkecommerce.webp",
     summary:
       "A modern, production-ready e-commerce storefront featuring a curated product catalog, intuitive category browsing, and a seamless cart-to-checkout experience.",
     bullets: [
@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: "Personal Developer Portfolio",
-    image: "/projects/portfolio.png",
+    image: "/projects/abdulsamadportfolio.webp",
     summary:
       "A personal portfolio built with React and TypeScript, featuring smooth animations, dark mode, and a clean modular component structure.",
     bullets: [
@@ -71,7 +71,11 @@ const Projects = () => {
                   <img
                     src={p.image}
                     alt={p.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    width={800}
+                    height={500}
+                    loading="lazy" 
+                    decoding="async" 
+                    className="w-full h-full object-cover ..."
                   />
 
                   {/* Overlay */}
