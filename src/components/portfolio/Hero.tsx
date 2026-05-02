@@ -182,9 +182,9 @@ const Hero = () => {
               { label: "Next.js", top: "5%", left: "-12%", delay: 0 },
               { label: "Reactjs", top: "18%", right: "-14%", delay: 0.4 },
               { label: "TypeScript", top: "50%", left: "-16%", delay: 0.8 },
-              { label: "Zustand", top: "50%", right: "-14%", delay: 1.2 },
-              { label: "TailwindCss", bottom: "15%", left: "-12%", delay: 1.6 },
-              { label: "Git", bottom: "5%", right: "-12%", delay: 2.0 },
+              { label: "Framer Motion", top: "50%", right: "-14%", delay: 1.2 },
+              { label: "Tailwind CSS", bottom: "15%", left: "-12%", delay: 1.6 },
+              { label: "Git/GitHub", bottom: "5%", right: "-12%", delay: 2.0 },
             ].map((b: any) => (
               <div
                 key={b.label}
