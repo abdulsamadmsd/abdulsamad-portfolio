@@ -5,9 +5,9 @@ import profileImg from "@/assets/hero-portrait.jpg";
 
 const roles = [
   "Frontend Developer",
-  "React Specialist",
-  "Next.js Engineer",
-  "UI Builder",
+  "React Developer",
+  "Next.js Developer",
+  "TypeScript Enthusiast",
 ];
 
 const Hero = () => {
@@ -17,19 +17,32 @@ const Hero = () => {
 
   useEffect(() => {
     const current = roles[roleIdx];
-    const speed = deleting ? 50 : 90;
-    const timeout = setTimeout(() => {
-      if (!deleting && text === current) {
-        setTimeout(() => setDeleting(true), 1400);
-        return;
-      }
-      if (deleting && text === "") {
-        setDeleting(false);
-        setRoleIdx((i) => (i + 1) % roles.length);
-        return;
-      }
-      setText(deleting ? current.slice(0, text.length - 1) : current.slice(0, text.length + 1));
-    }, speed);
+
+    const timeout = setTimeout(
+      () => {
+        // when typing completed → start deleting after delay
+        if (!deleting && text === current) {
+          setDeleting(true);
+          return;
+        }
+
+        // when deleting completed → move to next role
+        if (deleting && text === "") {
+          setDeleting(false);
+          setRoleIdx((i) => (i + 1) % roles.length);
+          return;
+        }
+
+        // typing / deleting logic
+        setText(
+          deleting
+            ? current.slice(0, text.length - 1)
+            : current.slice(0, text.length + 1),
+        );
+      },
+      deleting ? 50 : text === current ? 1400 : 90,
+    );
+
     return () => clearTimeout(timeout);
   }, [text, deleting, roleIdx]);
 
@@ -45,6 +58,7 @@ const Hero = () => {
       </div>
 
       <div className="relative mx-auto max-w-7xl container-px w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
+        {/* LEFT CONTENT */}
         <div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +66,7 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
             className="font-mono text-sm text-accent mb-5"
           >
-            👋 Hi, my name is
+            👋 Hi, I'm
           </motion.p>
 
           <motion.h1
@@ -83,13 +97,21 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.35 }}
             className="mt-6 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
-            I craft modern, scalable, and user-friendly web experiences with{" "}
+            I build fast, scalable, and visually polished web applications using{" "}
             <span className="text-foreground font-medium">React</span>,{" "}
             <span className="text-foreground font-medium">Next.js</span> &{" "}
             <span className="text-foreground font-medium">TypeScript</span> —
-            turning ideas into clean, performant interfaces.
+            focused on performance, clean architecture, and great user
+            experience.
           </motion.p>
 
+          {/* TRUST SIGNAL */}
+          <p className="mt-3 text-sm text-muted-foreground">
+            Built multiple real-world projects including e-commerce and dynamic
+            web apps.
+          </p>
+
+          {/* CTA BUTTONS */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,6 +125,7 @@ const Hero = () => {
               View My Work
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
+
             <a
               href="/abdul-samad-cv.pdf"
               download
@@ -113,6 +136,7 @@ const Hero = () => {
             </a>
           </motion.div>
 
+          {/* SOCIAL ICONS */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -150,7 +174,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Profile image side */}
+        {/* RIGHT IMAGE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -158,15 +182,17 @@ const Hero = () => {
           className="relative mx-auto"
         >
           <div className="relative h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] lg:h-[460px] lg:w-[460px]">
-            {/* spinning ring */}
+            {/* gradient ring */}
             <div className="absolute inset-0 rounded-full bg-gradient-primary p-[3px] animate-gradient">
               <div className="h-full w-full rounded-full bg-background" />
             </div>
+
             {/* pulse rings */}
             <div className="absolute inset-0 rounded-full border-2 border-primary/40 animate-pulse-ring" />
             <div className="absolute inset-0 rounded-full border-2 border-accent/40 animate-pulse-ring [animation-delay:-1.2s]" />
 
-            <div className="absolute inset-3 overflow-hidden rounded-full bg-background shadow-elevated">
+            {/* IMAGE */}
+            <div className="absolute inset-3 overflow-hidden rounded-full bg-background shadow-elevated hover:scale-[1.03] transition-transform duration-300">
               <img
                 src={profileImg}
                 alt="Abdul Samad — Frontend Developer"
@@ -177,13 +203,18 @@ const Hero = () => {
               />
             </div>
 
-            {/* floating badges */}
+            {/* FLOATING BADGES */}
             {[
               { label: "Next.js", top: "5%", left: "-12%", delay: 0 },
               { label: "Reactjs", top: "18%", right: "-14%", delay: 0.4 },
               { label: "TypeScript", top: "50%", left: "-16%", delay: 0.8 },
               { label: "Framer Motion", top: "50%", right: "-14%", delay: 1.2 },
-              { label: "Tailwind CSS", bottom: "15%", left: "-12%", delay: 1.6 },
+              {
+                label: "Tailwind CSS",
+                bottom: "15%",
+                left: "-12%",
+                delay: 1.6,
+              },
               { label: "Git/GitHub", bottom: "5%", right: "-12%", delay: 2.0 },
             ].map((b: any) => (
               <div
