@@ -68,16 +68,17 @@ const Projects = () => {
                 }`}
               >
                 {/* IMAGE */}
-                <div className="relative group rounded-2xl overflow-hidden shadow-xl">
+                {/* IMAGE */}
+                <div className="relative group rounded-2xl overflow-hidden shadow-xl 
+                 bg-surface">
                   <img
                     src={p.image}
                     alt={p.title}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform 
+                    duration-500 group-hover:scale-105"
                   />
-
-                  {/* Overlay */}
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition" />
                 </div>
 
